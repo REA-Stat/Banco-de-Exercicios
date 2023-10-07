@@ -1,0 +1,465 @@
+% !TeX spellcheck = pt_BR
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt,a4paper]{article}
+
+% O comando abaixo suprime as respostas e soluções:
+%\def\nosolution {}
+
+\newcommand{\mysourceurl}{\url{https://www.overleaf.com/8867764558xrvqdfdvjqfk}}
+
+\title{Banco de Exercícios de Estatística}
+\author{REA-Stat -- Recursos Educacionais Abertos de Estatística \\ \url{https://rea-stat.github.io/}}
+
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{color} 
+\usepackage{dsfont}
+\usepackage{setspace}
+\usepackage{xcolor}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{chngcntr}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{mathrsfs}  
+\usepackage{microtype}
+\usepackage{verbatim}
+
+% Tira o espaço depois da vírgula:
+\usepackage{icomma}
+
+% Muda as margens:
+\usepackage{geometry}
+\geometry{margin=25mm,centering,a4paper}
+
+\usepackage[shortlabels]{enumitem}
+\setlist{topsep=0em, partopsep=.5em, itemsep=0pt, noitemsep}
+\setlist[enumerate,1]{label=\rm(\alph*)}
+\setlist[enumerate,2]{label=(\roman*)}
+
+\usepackage{hyperref}
+\hypersetup{
+hidelinks,
+colorlinks,
+urlcolor=[rgb]{0,0,.7},
+linkcolor=[rgb]{.4,0,0},
+citecolor=[rgb]{0,.3,0},
+pdfstartview=FitH,
+pdfpagemode=UseNone
+}
+
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.4em}
+
+\renewcommand*{\url}[1]{\href{{#1}}{\sf\footnotesize\detokenize{#1}}}
+
+\graphicspath{{figures/}}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercício}
+\newtheorem*{solution}{Solução}
+\newtheorem*{answer}{Resposta}
+
+\ifdefined\nosolution \let\solution=\comment \let\endsolution=\endcomment \fi
+\ifdefined\nosolution \let\answer=\comment \let\endanswer=\endcomment \fi
+
+\usepackage[main,input,include]{embedall}
+%Use \embedfile{xxx.pdf} to manually embed figures!
+
+
+\begin{document}
+
+
+\maketitle
+
+\textbf{Fique à vontade para contribuir com seus exercícios!}
+
+Para isso, visite
+\url{https://www.overleaf.com/8867764558xrvqdfdvjqfk}
+
+Ao incluir um exercício no \href{https://www.overleaf.com/8867764558xrvqdfdvjqfk}{Overleaf}, você concorda que o direito autoral será do Projeto REA-Stat e ele será publicado sob a licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br}{CC-BY-SA}.
+
+O material a ser contribuído tem que ser escrito por você mesmo, não pode ser copiado.
+
+Se tem um exercício do qual você gosta muito, mas que não é seu, você pode reescrevê-lo com suas próprias palavras, sem copiar. O direito autoral protege uma expressão criativa, não uma ideia: é permitido reutilizar a mesma ideia se você expressá-la de outra forma.
+
+\tableofcontents
+
+\clearpage
+\input{licenca}
+
+\section{Como usar exercícios deste banco}
+
+Para provas ou listas de exercícios, copiar o seguinte em cada exercício ou no cabeçalho do material todo:
+
+\hfil
+\href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br}{\includegraphics[height=1em]{by-sa.pdf}}
+\href{https://rea-stat.github.io/}{REA-Stat}
+
+Importante: se for no cabeçalho do documento, você estará publicando toda a lista de exercícios sob a licença CC-BY-SA. Neste caso, a sua lista não deve conter exercícios de autor desconhecido ou copiados de livros.
+
+\medskip
+
+A primeira linha no preâmbulo do código-fonte deste documento contém um comando que faz as soluções e respostas desaparecerem: \verb|\def\nosolution {}|
+
+
+\clearpage
+\section{Probabilidade}
+
+\begin{exercise}
+Considere o experimento resultante do lançamento de dois dados onde se
+observa o mínimo entre suas faces. Construa um modelo probabilístico associado.
+\end{exercise}
+
+\begin{exercise}
+Se $P(A)=P(A|B)=\frac{1}{4}$ e $P(B|A)=\frac{1}{2}$:
+\begin{enumerate}
+\item $A$ e $B$ são independentes?
+\item $A$ e $B$ são mutuamente exclusivos?
+\item Calcule $P(A^c|B^c)$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Em uma gaveta existem 2 maços de baralho fechados.
+Um deles é um baralho comum de 52 cartas, $\{A,2,3,\dots,9,10,J,Q,K\} \times \{ \clubsuit,\heartsuit,\spadesuit,\diamondsuit \}$, e outro é um baralho de truco com 40 cartas (não possui as cartas de números `8', `9' e `10').
+
+Um dos maços é retirado da gaveta ao acaso e depois uma carta é sorteada ao acaso do baralho retirado.
+
+\begin{enumerate}[(a)]
+\item
+Calcule a probabilidade de a carta sorteada ser uma das três figuras reais ($J,Q,K$).
+\item
+Sabendo-se que foi sorteada uma figura real, calcule a probabilidade de o baralho retirado ter sido o baralho comum.
+\item
+Calcule a probabilidade de a carta sorteada ser de espadas $\spadesuit$.
+\item
+Sabendo-se que foi sorteada uma carta de espadas, calcule a probabilidade de o baralho retirado ter sido o baralho de truco.
+\item
+Sejam $A=$ ``Foi retirado o baralho comum'',
+$B=$ ``Foi sorteada uma figura real'' e
+$C=$ ``Foi sorteada uma carta de espadas''.
+$A$ e $B$ são independentes?
+$A$ e $C$ são independentes?
+$A$, $B$ e $C$ são coletivamente independentes?
+\item
+Qual a probabilidade de se sortear uma carta de número `5' ?
+\item
+Sabendo-se que foi sorteado um número (i.e., não foi sorteado $A$, $J$, $Q$ nem $K$), qual a probabilidade de o baralho retirado ter sido o baralho de truco?
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\clearpage
+\section{Variáveis aleatórias}
+
+\begin{exercise}
+Seja $X$ o número de caras obtidas em 4 lançamentos de uma moeda honesta.
+Determine a função de probabilidade de $X$.
+Desenhe o gráfico da função de distribuição da variável aleatória $X$.
+\end{exercise}
+
+\begin{exercise}
+Se $X\sim\exp(\lambda)$ e $Y=5X$, ache a distribuição acumulada de~$Y$.
+Ache a função de distribuição condicional e a densidade condicional de $Y$ dado que~$X>3$.
+\end{exercise}
+
+\begin{exercise}
+Sejam $X$ e $Y$ variáveis aleatórias discretas e independentes.
+Mostre que
+$$ p_{X+Y}(t) = \sum_s p_X(s) \cdot p_Y(t-s).$$
+Sugestão: particione $\Omega$ segundo o valor de $X$.
+\end{exercise}
+
+\begin{exercise}
+O número $X$ de uvas-passas encontradas em um panetone tem distribuição $\mathrm{Poisson}(\lambda)$.
+O panetone, estando com a data de validade vencida há alguns meses,
+pode ter uvas-passas estragadas.
+Cada uva-passa pode estar estragada independente das demais, com probabilidade~$p$.
+Encontre a distribuição do número de uvas-passas estragadas e calcule a probabilidade de não haver nenhuma estragada.
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+
+\clearpage
+\section{Esperança}
+
+\begin{exercise}
+Considere o seguinte jogo de azar.
+Uma urna contém $18$ bolas, sendo $9$ azuis e $9$ brancas.
+Retiram-se $3$ bolas da urna ao acaso.
+As bolas retiradas são descartadas e o jogador marca $1$ ponto se pelo menos $2$ dessas $3$ bolas forem azuis.
+Em seguida retiram-se outras $3$ bolas da urna ao acaso, as bolas retiradas são descartadas e o jogador marca $1$ ponto se pelo menos $2$ dessas $3$ bolas forem azuis.
+Repete-se o procedimento até que a urna esteja vazia.
+Ao final, o jogador recebe um prêmio $X$ igual ao total de pontos marcados.
+Calcule $EX$.
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+
+\clearpage
+\section{Distribuição normal}
+
+\begin{exercise}
+A distribuição dos comprimentos dos elos da corrente de bicicleta 
+é normal, com média $2$ cm e variância $0,01$ $cm^{2}$. Para que
+uma corrente se ajuste à bicicleta, deve ter comprimento total entre $58$
+e $61$ cm. Qual é a probabilidade de uma corrente com $30$ elos não
+se ajustar à bicicleta?
+\end{exercise}
+
+\begin{exercise}
+As durações de gravidez têm distribuição normal com
+média de 268 dias e desvio-padrão de $15$ dias.
+
+(a) Selecionada aleatoriamente uma mulher grávida, determine a
+probabilidade de que a duração de sua gravidez seja inferior a $260$
+dias.
+
+(b) Se $25$ mulheres escolhidas aleatoriamente são submetidas a uma
+dieta especial a partir do dia em que engravidam, determine a probabilidade
+de os prazos de duração de suas gravidezes terem média inferior
+a $260$ dias (admitindo-se que a dieta não produza efeito).
+
+(c) Se as $25$ mulheres têm realmente média inferior a $260$ dias,
+há razão de preocupação para os médicos de pré-natal?
+Justifique adequadamente.
+\end{exercise}
+
+\begin{exercise}
+O peso de uma determinada fruta é uma variável aleatória com
+distribuição normal com média de $200$ gramas e desvio-padrão de
+$50$ gramas. Determine a probabilidade de um lote contendo $100$
+unidades dessa fruta pesar mais que $21$ kg.
+\end{exercise}
+
+\begin{exercise}
+Um elevador pode suportar uma carga de $10$ pessoas ou um peso total de $1750 $
+libras. Assumindo que apenas homens tomam o elevador e que seus pesos
+são normalmente distribuídos com média $165$ libras e
+desvio-padrão de $10$ libras, qual a probabilidade de que o peso limite
+seja excedido para um grupo de $10$ homens escolhidos aleatoriamente?
+\end{exercise}
+
+\begin{exercise}
+Um par de dados honestos é lançado $180$ vezes por hora.
+\begin{enumerate}
+\item
+Qual a probabilidade aproximada de que $25$ ou mais lançamentos tenham tido soma $7$ na primeira hora?
+\item
+Qual a probabilidade aproximada de que entre $700$ e $750$ lançamentos tenham tido soma $7$ durante $24$ horas?
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Imagine um modelo idealizado com $M$ eleitores, dos quais $M_A$
+pretendem votar no candidato $A$. Suponha que seja possível sortear um
+desses eleitores ao acaso, e de forma equiprovável.
+Definimos
+$$
+  X=
+\begin{cases}
+1, & \mbox{caso o eleitor sorteado vá votar no candidato $A$},
+\\
+0, & \mbox{caso contrário}.
+\end{cases}
+$$
+
+Deseja-se estimar a proporção $p=\frac{M_A}M$ de eleitores do candidato $A$,
+que é desconhecida.
+Para isso, repete-se este processo $N$ vezes, obtendo-se $X_1,\dots,X_N$.
+Para estimar o valor de $p$ considera-se
+$$
+  \widehat p_N = \frac {X_1+\cdots+X_N}N.
+$$
+Supomos \textsl{a priori} que $p$ é bem próximo de $\frac{1}{2}$, de forma que
+$VX \approx \frac{1}{4}$.
+Se entrevistamos $N=2500$ eleitores, calcule aproximadamente a probabilidade de
+essa pesquisa cometer um erro $|\widehat p_N - p|$ maior que $0,01$.
+\end{exercise}
+
+\begin{exercise}
+Se lançamos 10.000 vezes uma moeda honesta, calcule aproximadamente a
+probabilidade de que o número de vezes que se obtém coroa seja no mínimo 4.893
+e no máximo 4.967.
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+
+\clearpage
+\section{Estimadores}
+
+\begin{exercise}
+Considere a variável aleatória discreta X, com distribuição uniforme sobre os inteiros $1, 2, 3,..., \theta$, isto é, 
+\begin{center}
+    \begin{tabular}{c|c|c|c|c|c}
+    \hline
+        X &1&2&3&...&$\theta$  \\
+        \hline
+         $p(x)$&$\frac{1}{\theta}$&$\frac{1}{\theta}$&$\frac{1}{\theta}$&$...$&$\frac{1}{\theta}$\\
+    \hline
+    \end{tabular}
+\end{center}
+Aqui, $\theta$ é um número inteiro positivo (por exemplo, $\theta = 10$). Uma amostra casual simples $X_1, X_2, X_3,..., X_n$ é selecionada e considera-se o seguinte estimador de $\theta$: $$\hat{\theta}= 2\overline{X}-1 \text{ onde 
+ }\overline{X} = \frac{1}{n} \sum_{i=1}^{n}X_{i} $$
+\begin{enumerate}
+\item
+Calcule $E(\hat{\theta})$ e $Var(\hat{\theta})$
+\begin{solution}
+$$
+E(\hat{\theta}) = 2E(\overline{X}) - 1 = 2E\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right) - 1 = 2\frac{\sum_{i=1}^{n}E(X_i)}{n} - 1 = \frac{2n\left(\frac{\theta+1}{2}\right)}{n}-1 = \theta$$
+$$
+Var(\hat{\theta}) = Var(2\overline{X}-1) = Var(2\overline{X}) = 4\, Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right) = \frac{4}{n^{2}}\left(\sum_{i=1}^{n}Var(X_i)\right)
+$$
+$$
+= \frac{4}{n} \cdot \frac{\theta^{2}-1}{12} = \frac{\theta^{2}-1}{3n}
+$$
+\end{solution}
+\item 
+$\hat{\theta}$ é não-enviesado? É consistente? Por quê?
+\begin{answer}
+$\hat{\theta}$ é não-enviesado e consistente, pois $E(\hat{\theta}) = \theta$ e $\lim_{n\to\infty} Var(\hat{\theta}) = 0$
+\end{answer}
+\item 
+Se $n = 6$ e a amostra analisada for $x_1 = x_2 = x_3 = x_4 = x_5 = 1$ e $x_6 = 2$, qual é a estimativa de $\theta$?
+Essa estimativa foi razoável?
+\begin{answer}
+Calculamos
+$\hat{\theta} = \frac{4}{3}$.
+Essa estimativa não é razoável, pois a observação $x_6=2$ sozinha já nos diz que $\theta \geq 2$ com certeza.
+\end{answer}
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\clearpage
+\section{Distribuição $t$}
+
+\begin{exercise}
+Com o auxílio de uma tabela $t$-Student e uma calculadora, calcule fazendo interpolação linear:
+\begin{enumerate}
+\item $P(-1,87 \leq T_{5} \leq 1,87)$.
+\begin{solution}
+Como 1,87 não está na tabela, podemos utilizar os valores vizinhos  $P(-1,476 < x < 1,476 ) = 0,8$ e $P(-2,015 < x < 2,015) = 0,9$ para obter via interpolação linear que
+\[
+P(-1,87 < x < 1,87)
+=
+0,8 + \frac{1,87-1,476}{2,015-1,476} \cdot (0,9-0,8)
+=
+0,873
+.
+\]
+\end{solution}
+\item $P( T_{9} < 0,6 )$.
+\begin{answer}
+0,72
+(interpolando da tabela)
+\end{answer}
+\item $P(-1,5 < T_{14} < 2,0)$.
+\begin{solution}
+Pela simetria da distribuição $T$, podemos consultar a tabela usando a propriedade de que
+\[
+P(T>t) = P(T<-t) = \tfrac{1}{2} \, P( |T| > t)
+\]
+para $t>0$.
+Assim, obtemos diretamente da tabela
+$P(T_{14}<-1,345)=0,10$ e $P(T_{14}<-1,761)=0,05$.
+
+Fazendo interpolação linear, obtemos
+$P(T_{14}<-1,5) = 0,0813$.
+
+De forma semelhante,
+$P(T_{14}>1,761)=0,05$ e $P(T_{14}>2,145)=0,025$.
+Novamente, fazendo interpolação linear, obtemos
+$P(T_{14}>2,0) = 0,034$.
+
+Assim,
+$P(T_{14}<2,0) = 1 - P(T_{14}>2,0) = 0,965$.
+
+Finalmente,
+$P(-1,5 < T_{14} < 2,0) = P(T_{14}<2,0) - P(T_{14}<-1,5) = 0,88$
+\end{solution}
+\item O valor de $a$ tal que $P(T_{9} > a) = 0,03$.
+\begin{solution}
+2,176
+\end{solution}
+\item O valor de $c$ tal que $P(|T_{11}| \leq c) = 0,92$
+\begin{answer}
+1,958
+\end{answer}
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+\clearpage
+\section{Distribuição $\chi^2$}
+
+\begin{exercise}
+Utilizando a tabela Qui-Quadrado e uma calculadora, determine:
+\begin{enumerate}
+    \item $P(\chi_{7}^{2} \geq 13)$
+\begin{answer}
+0,074
+(interpolando da tabela)
+\end{answer}
+    \item $P( \chi_{23}^{2}\leq 29)$
+\begin{answer}
+0,8
+(interpolando da tabela)
+\end{answer}
+    \item $P(\chi_{12}^{2} \leq 10)$
+\begin{answer}
+0,384
+(interpolando da tabela)
+\end{answer}
+    \item $P(12 \leq \chi_{17}^{2} \leq 30,2)$
+\begin{answer}
+0,775
+(não precisa interpolar)
+\end{answer}
+    \item O valor de $a$ tal que $P(\chi_{13}^{2} \geq a) = 0,06$
+\begin{solution}
+Como 0,06 não está na primeira linha da tabela $\chi^2$, tomamos os vizinhos 0,05 e 0,10.
+Observamos que $P(\chi_{13}^{2} \geq 22,36) = 0,05$ e $P(\chi_{13}^{2} \geq 19,81) = 0,1$, e usamos interpolação linear para obter
+\[
+a
+=
+22,36+\frac{0,06-0,05}{0,10-0,05} \cdot (19,81-22,36)
+=
+21,85
+.
+\]
+\end{solution}
+    \item O valor de $b$ tal que $P(\chi_{4}^{2} > b) = 0,03$
+\begin{answer}
+10,77
+(interpolando da tabela)
+\end{answer}
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+\end{exercise}
+
+
+\end{document}
