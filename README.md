@@ -1,7 +1,9 @@
 # Banco-de-Exercicios
 Banco de Exercícios
 
-Para compilar: pdflatex output.tex
+Para compilar:
+
+    pdflatex output.tex
 
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
